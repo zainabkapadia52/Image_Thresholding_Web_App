@@ -7,6 +7,7 @@ from io import BytesIO
 import plotly.express as px
 from utils import *
 
+
 st.set_page_config(page_title="Enhanced Image Thresholding App", layout="wide")
 
 # Custom CSS
