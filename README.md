@@ -1,6 +1,6 @@
 # Image Thresholding Web App
 
-[![**Open in Streamlit**](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://zainabkapadia-image-thresholding-webapp.streamlit.app/)
+[![**Open in Streamlit**](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://zainabkapadia52-image-thresholding-webapp.streamlit.app)
 
 ## Overview
 This web application implements Otsu's thresholding method for image binarization. It provides an interactive interface for users to upload images, apply thresholding, and visualize the results.
