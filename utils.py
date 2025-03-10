@@ -81,18 +81,24 @@ def gaussian_noise(img):
     return noisy_img
 
 def variance_within(t, hist):
-    try:
-        w1 = sum(hist[i] for i in range(0, t))
-        mu1 = sum(i * hist[i] for i in range(0, t)) / sum(hist[i] for i in range(0, t))
-        var1 = sum(hist[x] * ((x - mu1)**2) for x in range(0, t)) / sum(hist[i] for i in range(0, t))
+    # Sum of histogram values from [0..t)
+    w1 = sum(hist[i] for i in range(0, t))
+    # Sum of histogram values from [t..end)
+    w2 = sum(hist[i] for i in range(t, len(hist)))
 
-        w2 = sum(hist[i] for i in range(t, len(hist)))
-        mu2 = sum(i * hist[i] for i in range(t, len(hist))) / sum(hist[i] for i in range(t, len(hist)))
-        var2 = sum(hist[x] * ((x - mu2)**2) for x in range(t, len(hist))) / sum(hist[i] for i in range(t, len(hist)))
-        var = w1 * var1 + w2 * var2
-    except:
-        var = float(m.inf)
+    # If either class has zero pixels, return inf
+    if w1 == 0 or w2 == 0:
+        return float('inf')
+
+    mu1 = sum(i * hist[i] for i in range(0, t)) / w1
+    var1 = sum(hist[x] * ((x - mu1) ** 2) for x in range(0, t)) / w1
+
+    mu2 = sum(i * hist[i] for i in range(t, len(hist))) / w2
+    var2 = sum(hist[x] * ((x - mu2) ** 2) for x in range(t, len(hist))) / w2
+
+    var = w1 * var1 + w2 * var2
     return var
+
 
 def find_threshold_within(img):
     pix = np.asarray(img).reshape(-1)
