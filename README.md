@@ -3,16 +3,15 @@
 [![**Open in Streamlit**](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://zainabkapadia52-image-thresholding-webapp.streamlit.app)
 
 ## Overview
-This web application implements Otsu's thresholding method for image binarization. Image thresholding is a fundamental image processing technique that separates an image's foreground from its background, creating a binary image. Otsu's method is an automatic thresholding algorithm that calculates the optimal threshold value to separate an image into foreground and background. It works by minimizing the intra-class variance between the two classes of pixels.
-Tis webapp provides an interactive interface for users to upload images, apply thresholding, and visualize the results.
+This web application combines two powerful image processing tools into one interactive platform. It offers both histogram matching for photo style consistency and image thresholding using Otsu's method. In the histogram matching mode, users can upload a target style image along with one or more source images, and the app automatically transfers the tonal characteristics from the target to the source images. In the thresholding mode, users can apply automatic Otsu thresholding or adjust manually to create a binary image that effectively separates the foreground from the background. Additional features include optional Gaussian noise addition, detailed histogram visualization, and convenient download options for processed images.
 
 ## Features
 - Image upload functionality
-- Otsu thresholding implementation
-- Manual thresholding option
-- Gaussian noise addition (optional)
-- Histogram visualization
-- Download options for processed images
+- Histogram Matching with Blending: Adjust the strength of the effect using an interactive blending slider.
+- Color Image Processing: Processes images in the YCrCb color space to preserve color information.
+- Otsu thresholding implementation with options of manual thresholding and gaussian noise addition.
+- Interactive Visualization: View interactive histograms for the source, target, and processed images using Plotly.
+- Download Options: Download the processed images directly from the interface.
 
 ## Technologies Used
 - Python
@@ -20,6 +19,7 @@ Tis webapp provides an interactive interface for users to upload images, apply t
 - OpenCV
 - NumPy
 - Matplotlib
+- Plotly
 
 ## Installation
 1. Clone the repository: git clone https://github.com/zainabkapadia52/Image_Thresholding_Web_App.git
