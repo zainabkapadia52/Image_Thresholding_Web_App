@@ -3,7 +3,8 @@
 [![**Open in Streamlit**](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://zainabkapadia52-image-thresholding-webapp.streamlit.app)
 
 ## Overview
-This web application implements Otsu's thresholding method for image binarization. It provides an interactive interface for users to upload images, apply thresholding, and visualize the results.
+This web application implements Otsu's thresholding method for image binarization. Image thresholding is a fundamental image processing technique that separates an image's foreground from its background, creating a binary image. Otsu's method is an automatic thresholding algorithm that calculates the optimal threshold value to separate an image into foreground and background. It works by minimizing the intra-class variance between the two classes of pixels.
+Tis webapp provides an interactive interface for users to upload images, apply thresholding, and visualize the results.
 
 ## Features
 - Image upload functionality
